@@ -1,0 +1,48 @@
+---
+title: Daftar Pengguna Eksis
+body_class: "signup"
+---
+
+.container.ctn-eksis
+
+  .signup-page-title-wrapper
+    .signup-page-title
+      .icon-wrapper
+        %span.glyphicon.glyphicon-user
+        %span.glyphicon.glyphicon-plus
+      %h1.su-page-title Registrasi Baru
+
+  .form-signup-wrapper
+    .form-signup
+      %form{ :role => "form" }
+        .form-group
+          %label.hide{ :for => "input-nama" } Nama
+          %input.form-control.input-lg{ :type => "text", :id => "input-nama", :placeholder => "Nama" }
+        .form-group
+          %label.hide{ :for => "input-email" } Email address
+          %input.form-control.input-lg{ :type => "email", :id => "input-email", :placeholder => "Email" }
+        .form-group
+          %label.hide{ :for => "input-password" } Password
+          %input.form-control.input-lg{ :type => "password", :id => "input-password", :placeholder => "Password" }
+        .form-group
+          %label.hide{ :for => "input-username" } Username
+          %input.form-control.input-lg{ :type => "text", :id => "input-username", :placeholder => "Username" }
+
+        .checkbox
+          %label
+            %input{ :type => "checkbox" } Saya telah menyetujui <a href="#">persyaratan penggunaan</a> eksis.
+
+        %button.btn.btn-danger.btn-lg.btn-idx.btn-block{ :type => "submit" } daftar sekarang
+
+      .form-signup-separator
+        %span.separator-line
+        %span.separator-text atau login dengan
+
+      %h5.signup-oauth Akun sosial mediamu
+      %a.signup-oauth-tw{ :href => "#", :title => "Login with Twitter" }
+        %img{:src => "../images/icon-tw.jpg", :alt => "Twitter"}/
+      %a.signup-oauth-fb{ :href => "#", :title => "Login with Facebook" }
+        %img{:src => "../images/icon-fb.jpg", :alt => "Facebook"}/
+
+
+/.container

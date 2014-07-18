@@ -1,0 +1,28 @@
+.navbar.navbar-default{ :role => "navigation" }
+  .container
+    .navbar-header
+      %button.navbar-toggle{ :type => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse" }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{ :href => "#" }
+        %span.logo-trans
+          %img{ :src => "images/logo-transparent.png", :alt => "Eksis" }/
+        %span.logo-text
+          Eksis
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.pull-right
+        %li.active
+          %a{ :href => "#" } <span class="glyphicon glyphicon-home main-nav"></span>
+        %li
+          %a{ :href => "#" } <span class="glyphicon glyphicon-cog main-nav"></span>
+        %li
+          %a{ :href => "#" } <span class="glyphicon glyphicon-th-list main-nav"></span>
+        %li
+          %a{ :href => "#" } <span class="glyphicon glyphicon-wrench main-nav"></span>
+        %li
+          %a{ :href => "#" } <span class="glyphicon glyphicon-eye-open main-nav"></span>
+        %li
+          %a{ :href => "#" } <span class="glyphicon glyphicon-user main-nav"></span>
+    /.nav-collapse

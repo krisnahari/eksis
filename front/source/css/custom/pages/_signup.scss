@@ -1,0 +1,70 @@
+.form-signup-wrapper {
+  @extend .row;
+}
+
+.form-signup {
+  @extend .col-md-5;
+}
+
+.signup-page-title-wrapper {
+  margin-bottom: $ggw *3;
+
+  .signup-page-title {
+    width: 300px;
+    margin: 0 auto;
+
+    .icon-wrapper {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto;
+      position: relative;
+
+      .glyphicon-user {
+        font-size: 64px;
+      }
+
+      .glyphicon-plus {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .su-page-title {
+      font-family: "open_sanslight", sans-serif;
+      text-align: center;
+    }
+  }
+}
+
+.form-signup-separator {
+  text-align: center;
+  position: relative;
+  margin-top: $ggw *2;
+
+  .separator-line {
+    height: 1px;
+    background-color: #444;
+    position: absolute;
+    margin-top: 13px;
+    content: "";
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  .separator-text {
+    font-family: "open_sansitalic", sans-serif;
+    font-size: 18px;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+    padding: 0 $ggw *0.5;
+  }
+}
+
+.signup-oauth {
+  text-align: center;
+  font-weight: bold;
+  font-family: "open_sansbold";
+}
