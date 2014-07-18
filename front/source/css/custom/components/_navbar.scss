@@ -1,0 +1,36 @@
+.navbar-brand {
+  .logo-trans {
+    img {
+      width: 80%;
+      margin-top: -7px;
+    }
+  }
+  .logo-text {
+    display: none;
+  }
+}
+
+.navbar {
+  min-height: 65px;
+
+  .main-nav {
+    font-size: 32px;
+  }
+}
+
+.navbar-default {
+  border-color: transparent;
+}
+
+.index {
+  .navbar {
+    margin-bottom: 0;
+  }
+}
+
+.signup {
+  .navbar-toggle,
+  .navbar-collapse {
+    @extend .hide;
+  }
+}

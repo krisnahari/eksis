@@ -1,0 +1,34 @@
+footer.ft-eksis {
+  background-color: #ddd;
+  padding: $ggw *1.5 0;
+}
+
+.footer-wrapper {
+  @extend .row;
+}
+
+[class^="footer-widget-"],
+[class*="footer-widget-"] {
+  @extend .col-md-3;
+  @extend .col-sm-6;
+
+  .widget-title {
+    @extend .teaser-text-light;
+    @extend .h4;
+    color: $gray-light;
+  }
+}
+
+.btn-ft-subscribe {
+  padding-top: 6px;
+  padding-bottom: 7px;
+  background-color: #aaa;
+  color: white;
+  font-weight: bold;
+}
+
+.ft-bottom {
+  @extend .small;
+  text-align: center;
+  margin: $ggw 0;
+}

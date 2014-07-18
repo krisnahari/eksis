@@ -1,0 +1,61 @@
+-# BS v3.1.1 & MM v3.2.2
+-# Bima's skeleton for CDV
+-# ================================================ #
+!!! 5
+%html{ :lang => "#{site_language}", :dir => "ltr", :itemscope => "itemscope", :itemtype => "http://schema.org/WebPage" }
+  %head
+    %meta{ :charset => "utf-8" }
+
+    -# Always force latest IE rendering engine or request Chrome Frame
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1" }
+    %meta{ :name => "description", :itemprop => "description" , :content => "#{site_description}" }
+    %meta{ :name => "keywords", :content => "#{site_keywords}" }
+    %meta{ :name => "author", :content => "#{site_author}" }
+
+    -# Use title if it's in the page YAML frontmatter
+    %title{ :itemprop => "name" } #{ data.page.title || site_title }
+
+    = yield_content :head
+
+    -# %link{ :href => "css/site.css", :charset => "utf-8", :rel => "stylesheet" }/
+    = stylesheet_link_tag "site", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_bold_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_bolditalic_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_extrabold_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_extrabolditalic_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_italic_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_light_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_lightitalic_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_regular_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_semibold_macroman/stylesheet", :charset => "utf-8"
+    = stylesheet_link_tag "fonts/open-sans/webfonts/opensans_semibolditalic_macroman/stylesheet", :charset => "utf-8"
+
+    -# custom style, if available to be loaded separated
+    = yield_content :assets
+
+    -# HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    / [if lt IE 9]
+      = javascript_include_tag "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+      = javascript_include_tag "https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"
+
+    -# Favicons
+    = favicon_tag 'favicon.ico', rel: "Shortcut icon"
+    = favicon_tag "apple-touch-icon-144-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "144x144"
+
+    - if @analytics_account && !development?
+      %script[type="text/javascript"]
+        | (function(d,e,j,h,f,c,b){d.GoogleAnalyticsObject=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)},d[f].l=1*new Date();c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","#{@analytics_account}", location.hostname);ga("send","pageview");
+
+  %body{ :class => "#{data.page.body_class}" }
+
+    / header navigation
+    = partial "layouts/partials/components/header"
+
+    = yield
+
+    / header navigation
+    = partial "layouts/partials/components/footer"
+
+    = javascript_include_tag "libs/jquery", "app", "site"

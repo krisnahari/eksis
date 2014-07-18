@@ -1,0 +1,32 @@
+.ctn-eksis {
+  padding-bottom: $ggw *3;
+}
+
+.teaser-text-wrapper {
+  margin: $ggw *2 0;
+}
+
+.teaser-text-container {
+  @extend .row;
+}
+
+.teaser-text {
+  @extend .col-sm-6;
+}
+
+.teaser-text-light {
+  font-family: "open_sanslight", sans-serif;
+}
+
+.teaser-feature-wrapper {
+  text-align: center;
+}
+
+.img-teaser-feature {
+  margin: $ggw *2 0;
+}
+
+.btn-idx {
+  background-color: #f7221c;
+  border-color: #d8160f;
+}
