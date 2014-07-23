@@ -13,7 +13,7 @@ gem install middleman
 
 ## How to Run
 
-1. Checkout Repository "front" on BRANCH: frontdev
+1. Checkout Repository on BRANCH: frontdev
 2. Install Bundler: `gem install bundler`
 3. Run `bundle install` from terminal (OS X and Linux) or console (Windows) inside the project root to install the gem dependencies.
 4. Run test cases: `middleman` from terminal (OS X and Linux) or console (Windows).
