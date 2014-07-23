@@ -1,0 +1,76 @@
+---
+title: Talent Dashboard
+body_class: "talent_dashboard"
+---
+
+.container.ctn-eksis
+
+  .td-ct-wrapper
+    .td-left-ct
+      %h3 Halo username
+      .img-avatar-wrapper
+        .img-avatar-fake no image
+      %ul.td-menu-left
+        %li.active
+          %a{ :href => "#" } Profil Saya
+        %li
+          %a{ :href => "#" } Portfolio
+        %li
+          %a{ :href => "#" } Lainnya
+
+    .td-middle-ct
+      .form-talent-wrapper
+        .form-talent
+          %form{ :role => "form" }
+            .form-group
+              %label.hide{ :for => "input-username" } Username
+              %input.form-control.input-lg{ :type => "text", :id => "input-username", :placeholder => "Username" }
+            .form-group
+              %label.hide{ :for => "input-nama-depan" } Nama depan
+              %input.form-control.input-lg{ :type => "text", :id => "input-nama-depan", :placeholder => "Nama depan" }
+            .form-group
+              %label.hide{ :for => "input-nama-belakang" } Nama belakang
+              %input.form-control.input-lg{ :type => "text", :id => "input-nama-belakang", :placeholder => "Nama belakang" }
+            .form-group
+              %label.hide{ :for => "input-email" } Email address
+              %input.form-control.input-lg{ :type => "email", :id => "input-email", :placeholder => "Email" }
+            .checkbox
+              %label.checkbox-inline
+                %input#inlineCheckbox1{ :type => "checkbox", :value => "option1" } Pria
+              %label.checkbox-inline
+                %input#inlineCheckbox2{ :type => "checkbox", :value => "option2" } Wanita
+            .form-group
+              %label.hide{ :for => "input-lahir" } Tempat lahir
+              %input.form-control.input-lg{ :type => "text", :id => "input-tempat-lahir", :placeholder => "Tempat lahir" }
+            .date-birth-wrapper
+              %label{ :for => "input-lahir" } Tempat lahir <br />
+              .date-birth.row
+                .col-lg-3
+                  %select.form-control.input-lg
+                    %option Tanggal
+                    %option 1
+                    %option 2
+                    %option 3
+                .col-lg-6
+                  %select.form-control.input-lg
+                    %option Bulan
+                    %option Januari
+                    %option Februari
+                    %option Maret
+                .col-lg-3
+                  %select.form-control.input-lg
+                    %option Tahun
+                    %option 1998
+                    %option 1999
+                    %option 2000
+
+            %br
+
+            %button.btn-talent-settings{ :type => "submit" } Simpan data saya
+
+    .td-right-ct
+      .talent-percentage-wrapper
+        %h2.percentage <strong>0%</strong>
+        %p.lead 0.0MB dari 1GB Kuota terpakai <small>Mulai buat portfolioku</small>
+
+/.container

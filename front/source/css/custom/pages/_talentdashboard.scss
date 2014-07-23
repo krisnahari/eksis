@@ -1,0 +1,81 @@
+.talent_dashboard {
+  .navbar-default {
+    background-color: lighten($gray-lighter, 2.5%);
+  }
+}
+
+.td-ct-wrapper {
+  @extend .row;
+}
+
+.td-left-ct,
+.td-right-ct {
+  @extend .col-lg-3;
+}
+
+.td-middle-ct {
+  @extend .col-lg-6;
+  padding-top: $ggw *3;
+}
+
+.btn-talent-settings {
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-lg;
+  @extend .btn-idx;
+}
+
+.img-avatar-fake {
+  width: 200px;
+  height: 200px;
+  background-color: $gray-light;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 200px;
+  color: white;
+}
+
+.td-menu-left {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    &.active {
+      a {
+        color: $gray-dark;
+      }
+    }
+
+    a {
+      @extend .h3;
+      padding: $ggw *0.1 0;
+      display: block;
+      color: $gray-light;
+    }
+  }
+}
+
+.talent-percentage-wrapper {
+  border: 1px solid $gray-lighter;
+  border-radius: 3px;
+  background-color: lighten($gray-lighter, 2.5%);
+  text-align: center;
+  margin-top: $ggw *3;
+
+  .percentage {
+    padding: $ggw *1.5 0;
+  }
+
+  p {
+    border-top: 1px solid $gray-lighter;
+    background-color: #fff;
+    margin: 0;
+    padding: $ggw *0.5;
+    font-size: 18px;
+
+    small {
+      display: block;
+      font-size: 12px;
+    }
+  }
+}
