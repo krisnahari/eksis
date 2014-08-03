@@ -1,0 +1,14 @@
+.menu-builder-title.menu-builder-image.tooltips{"data-toggle" => "tooltip", :title => "Upload image to share image"}
+  %i
+  Image
+.menu-builder-content
+  .form-group
+    .fileinput.fileinput-new.input-group{"data-provides" => "fileinput"}
+      .form-control{"data-trigger" => "fileinput"}
+        %i.glyphicon.glyphicon-file.fileinput-exists
+        %span.fileinput-filename
+      %span.input-group-addon.btn.btn-default.btn-file
+        %span.fileinput-new Select file
+        %span.fileinput-exists Change
+        %input{name: "...", type: "file"}/
+      %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", href: "#"} Remove

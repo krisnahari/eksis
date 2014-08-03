@@ -1,0 +1,42 @@
+%ul#menu-builder.nav.nav-tabs{role: "tablist"}
+  %li.active
+    %a{"data-toggle" => "tab", href: "#menu-builder-media", role: "tab"} add media
+  %li
+    %a{"data-toggle" => "tab", href: "#menu-builder-editor", role: "tab"} add content
+  %li
+    %a{"data-toggle" => "tab", href: "#menu-builder-layout", role: "tab"} add layout
+\
+
+#menu-builder-content.tab-content
+  .tab-pane.fade.in.active#menu-builder-media
+    .clearfix
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-image')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-video')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-masonry')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-youtube')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-soundcloud')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-audio')
+  / #menu-builder-media
+  \
+
+  .tab-pane.fade#menu-builder-editor
+    .clearfix
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-text')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-line')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-icon')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-list')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-button')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-tabs')
+      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-accordion')
+  / #menu-builder-editor
+  \
+
+  .tab-pane.fade#menu-builder-layout
+    .clearfix
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout1')
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout2')
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout3')
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout4')
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout5')
+      .menu-builder-item.menu-builder-grid= partial('layouts/partials/components/menu/builder-layout6')
+  / #menu-builder-layout

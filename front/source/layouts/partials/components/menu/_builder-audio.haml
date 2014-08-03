@@ -1,0 +1,22 @@
+.menu-builder-title.menu-builder-audio.tooltips{"data-toggle" => "tooltip", :title => "Upload image to share image"}
+  %i
+  Audio
+.menu-builder-content
+  .panel.panel-default
+    .panel-heading
+      Upload File Audio
+      %a.close.pull-right{:href => "#"} <span class="glyphicon glyphicon-remove"></span>
+    .panel-body
+      %p.small Give them a taste of your music. Upload the file and cut, trim, mix, delete parts of your audio.*
+      .form-group
+        .fileinput.fileinput-new.input-group{"data-provides" => "fileinput"}
+          .form-control{"data-trigger" => "fileinput"}
+            %i.glyphicon.glyphicon-file.fileinput-exists
+            %span.fileinput-filename
+          %span.input-group-addon.btn.btn-default.btn-file
+            %span.fileinput-new Select file
+            %span.fileinput-exists Change
+            %input{name: "...", type: "file"}/
+          %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", href: "#"} Remove
+      %p.text-right
+        %a.save-opts{:href => "#"} Upload <span class="glyphicon glyphicon-ok"></span>

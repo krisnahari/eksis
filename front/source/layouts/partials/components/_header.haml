@@ -17,8 +17,10 @@
           %a{ :href => "#" } <span class="glyphicon glyphicon-home main-nav"></span>
         %li
           %a{ :href => "#" } <span class="glyphicon glyphicon-cog main-nav"></span>
-        %li
-          %a{ :href => "#" } <span class="glyphicon glyphicon-th-list main-nav"></span>
+        %li.dropdown#builder-dropdown
+          %a{ :href => "#",  "data-toggle" => "dropdown" } <span class="glyphicon glyphicon-th-list main-nav"></span>
+          .dropdown-menu.builder-menu{role: "menu"}
+            = partial('layouts/partials/components/builder-menu')
         %li
           %a{ :href => "#" } <span class="glyphicon glyphicon-wrench main-nav"></span>
         %li

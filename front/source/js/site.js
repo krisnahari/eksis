@@ -134,4 +134,40 @@
 
   });
 
+  $('#builder-dropdown .dropdown-menu').on('click', '.nav-tabs a', function(){
+    $(this).closest('.dropdown').addClass('dontClose');
+  })
+
+  $('#builder-dropdown').on('hide.bs.dropdown', function(e) {
+    if ( $(this).hasClass('dontClose') ){
+      e.preventDefault();
+    }
+    $(this).removeClass('dontClose');
+  });
+
+  $('.tooltips').tooltip({placement: 'bottom'});
+
+  $('#editor-builder, #editor-builder .builder-column-body').sortable({
+    connectWith: '.builder-column-body',
+    placeholder: 'builder-placeholder',
+    sort: function() {
+      $( this ).find('.placeholder').remove()
+    }
+  });
+
+  $('.menu-builder-grid').draggable({
+    helper: 'clone',
+    connectToSortable: '#editor-builder',
+    stop: function() {
+      $('#editor-builder .builder-column-body').sortable({
+        connectWith: '.builder-column-body'
+      });
+    }
+  });
+
+  $('.menu-builder-element').draggable({
+    helper: 'clone',
+    connectToSortable: '#editor-builder .builder-column-body'
+  });
+
 }(window.jQuery));

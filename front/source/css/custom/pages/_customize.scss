@@ -1,0 +1,254 @@
+// Menu Builder
+// ========================
+
+.builder-menu {
+  width: 440px;
+  left: -180px;
+  padding: 0;
+  border-radius: 0;
+
+  .nav-tabs {
+
+    > li {
+      margin-bottom: -2px;
+      width: 33%;
+      text-align: center;
+
+      &:last-child {
+        width: 34%;
+
+        > a {
+          border-right-color: transparent;
+        }
+      }
+      
+      > a {
+        font-size: 12px;
+        border-radius: 0;
+        border-right-color: #ddd;
+        color: #ccc;
+        margin-right: 0;
+
+        &:hover {
+          color: #ff0000;
+          background-color: #fff;
+          border-top: none;
+          border-left-color: transparent;
+        }
+      }
+
+      &.active {
+
+        > a, > a:hover, > a:focus {
+          color: #ff0000;
+          border-left-color: transparent;
+          border-top-color: transparent;
+        }
+      }
+    }
+  }
+
+  .tab-pane {
+    padding: 20px 10px;
+    font-size: 10px;
+  }
+
+  .menu-builder-title {
+    float: left;
+  }
+
+  .menu-builder-content {
+    display: none;
+  }
+}
+
+.menu-builder-title {
+  width: 46px;
+  margin: 0 10px;
+  text-align: center;
+
+  i {
+    background: image-url("menu-builder-icon.png") no-repeat;
+    display: block;
+    height: 40px;
+  }
+}
+
+#menu-builder-editor .menu-builder-title {
+  margin: 0 5px;
+}
+
+.menu-builder-image i { background-position: 0 0 }
+.menu-builder-video i { background-position: 0 -40px }
+.menu-builder-gallery i { background-position: 0 -80px }
+.menu-builder-youtube i { background-position: 0 -120px }
+.menu-builder-soundcloud i { background-position: 0 -160px }
+.menu-builder-audio i { background-position: 0 -200px }
+.menu-builder-text i { background-position: 0 -240px }
+.menu-builder-line i { background-position: 0 -280px }
+.menu-builder-icon i { background-position: 0 -320px }
+.menu-builder-list i { background-position: 0 -360px }
+.menu-builder-button i { background-position: 0 -400px }
+.menu-builder-tabs i { background-position: 0 -440px }
+.menu-builder-accordion i { background-position: 0 -480px }
+.menu-builder-grid1 i { background-position: 0 -520px }
+.menu-builder-grid2 i { background-position: 0 -560px }
+.menu-builder-grid3 i { background-position: 0 -600px }
+.menu-builder-grid4 i { background-position: 0 -640px }
+.menu-builder-grid5 i { background-position: 0 -680px }
+.menu-builder-grid6 i { background-position: 0 -720px }
+
+
+
+// Page Builder
+// ========================
+
+.ctn-customize {
+  min-height: 400px;
+  margin-top: 40px;
+}
+
+#editor-builder {
+
+  > .menu-builder-item {
+    margin-bottom: 20px;
+  }
+
+  .menu-builder-title,
+  .tooltip {
+    display: none !important;
+  }  
+
+  .menu-builder-content {
+    display: block;
+  }
+}
+
+.placeholder {
+  opacity: 0.5;
+}
+
+.builder-placeholder,
+.builder-placeholder-inner {
+  border: 1px dashed #c7c7c7;
+  height: 40px;
+  background-color: #f6f6f6;
+}
+
+.menu-builder-single {
+  margin-bottom: 20px;
+}
+
+.builder-column-title {
+  border: 1px solid #c7c7c7;
+  padding: 10px;
+}
+
+.builder-column-body {
+  border: 1px dashed #c7c7c7;
+  border-top: none;
+  padding: 10px;
+  min-height: 40px;
+}
+
+.builder-columns-grid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.menu-builder-content {
+  display: none;
+
+  .panel {
+    background-color: #f5f5f5;
+  }
+
+  .panel-heading {
+    text-transform: uppercase;
+  }
+
+  .close {
+    color: #000;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .fileinput-new.input-group .btn-file, .fileinput-new .input-group .btn-file {
+    background-color: red;
+    color: #fff;
+    border-color: red;
+  }
+}
+
+.save-opts {
+  color: #000;
+
+  &:hover {
+    text-decoration: none
+  }
+}
+
+.panel-tabs {
+  border-bottom: none;
+
+  &.nav-pills > li > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: none;
+    color: #000;
+  }
+
+  &.nav-tabs > li.active > a, &.nav-tabs > li.active > a:hover, &.nav-tabs > li.active > a:focus {
+    border: none;
+  }
+
+  &.nav-pills > li.active > a, &.nav-pills > li.active > a:hover, &.nav-pills > li.active > a:focus {
+    background-color: red;
+    color: #fff;
+  }
+}
+
+.panel-icon {
+  
+  a {
+    color: #000;
+    font-size: 16px;
+  }
+
+  .pull-left {
+    margin-left: 10px
+  }
+}
+
+.editor-control {
+  float: left;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  margin-right: 5px;
+
+  &.font-control {
+    border: 1px solid #ccc;
+    font-size: 20px;
+
+    &.bold {
+      font-weight: bold;
+    }
+    &.italic {
+      font-style: italic;
+    }
+    &.underline {
+      font-variant: small-caps;
+      font-size: 14px;
+    }
+  }
+  &.unlink {
+    text-decoration: line-through;
+  }
+  &.color-red { background-color: red }
+  &.color-black { background-color: #000 }
+  &.color-grey { background-color: #aaa }
+}

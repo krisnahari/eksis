@@ -56,8 +56,357 @@ Eksis
 <li>
 <a href="#"><span class="glyphicon glyphicon-cog main-nav"></span></a>
 </li>
+<li class="dropdown" id="builder-dropdown">
+<a data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list main-nav"></span></a>
+<div class="dropdown-menu builder-menu" role="menu">
+<ul class="nav nav-tabs" id="menu-builder" role="tablist">
+<li class="active">
+<a data-toggle="tab" href="#menu-builder-media" role="tab">add media</a>
+</li>
 <li>
-<a href="#"><span class="glyphicon glyphicon-th-list main-nav"></span></a>
+<a data-toggle="tab" href="#menu-builder-editor" role="tab">add content</a>
+</li>
+<li>
+<a data-toggle="tab" href="#menu-builder-layout" role="tab">add layout</a>
+</li>
+</ul>
+
+<div class="tab-content" id="menu-builder-content">
+<div class="tab-pane fade in active" id="menu-builder-media">
+<div class="clearfix">
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-image tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Image
+</div>
+<div class="menu-builder-content">
+<div class="form-group">
+<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+<div class="form-control" data-trigger="fileinput">
+<i class="glyphicon glyphicon-file fileinput-exists"></i>
+<span class="fileinput-filename"></span>
+</div>
+<span class="input-group-addon btn btn-default btn-file">
+<span class="fileinput-new">Select file</span>
+<span class="fileinput-exists">Change</span>
+<input name="..." type="file">
+</span>
+<a class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput" href="#">Remove</a>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-video tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Video
+</div>
+<div class="menu-builder-content">
+<div class="panel panel-default">
+<div class="panel-heading">
+Setting Embed
+<a class="close pull-right" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+<div class="panel-body">
+<p>Video</p>
+<p>
+<input class="form-control" placeholder="source id - paste url atau id video" type="text">
+</p>
+<p class="row">
+<span class="col-sm-3">
+<input class="form-control" placeholder="tinggi" type="text">
+</span>
+<span class="col-sm-3">px</span>
+</p>
+<p class="row">
+<span class="col-sm-3">
+<input class="form-control" placeholder="tinggi" type="text">
+</span>
+<span class="col-sm-3">px</span>
+</p>
+<p class="text-right">
+<a class="save-opts" href="#">Simpan <span class="glyphicon glyphicon-ok"></span></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-gallery tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Masonry Gallery
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-youtube tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Youtube
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-soundcloud tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+SoundCloud
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-audio tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Audio
+</div>
+<div class="menu-builder-content">
+<div class="panel panel-default">
+<div class="panel-heading">
+Upload File Audio
+<a class="close pull-right" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+<div class="panel-body">
+<p class="small">Give them a taste of your music. Upload the file and cut, trim, mix, delete parts of your audio.*</p>
+<div class="form-group">
+<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+<div class="form-control" data-trigger="fileinput">
+<i class="glyphicon glyphicon-file fileinput-exists"></i>
+<span class="fileinput-filename"></span>
+</div>
+<span class="input-group-addon btn btn-default btn-file">
+<span class="fileinput-new">Select file</span>
+<span class="fileinput-exists">Change</span>
+<input name="..." type="file">
+</span>
+<a class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput" href="#">Remove</a>
+</div>
+</div>
+<p class="text-right">
+<a class="save-opts" href="#">Upload <span class="glyphicon glyphicon-ok"></span></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- #menu-builder-media -->
+
+<div class="tab-pane fade" id="menu-builder-editor">
+<div class="clearfix">
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-text tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Text Area
+</div>
+<div class="menu-builder-content">
+<div class="panel panel-default">
+<div class="panel-heading clearfix">
+<div class="pull-left">
+<ul class="nav nav-tabs nav-pills panel-tabs" role="tablist">
+<li>
+<a data-toggle="tab" href="#panel-style" role="tab">style</a>
+</li>
+<li class="active">
+<a data-toggle="tab" href="#panel-font" role="tab">font</a>
+</li>
+</ul>
+
+</div>
+<div class="pull-right panel-icon">
+<a class="remove pull-left" href="#"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
+<a class="remove pull-left" href="#"><span class="glyphicon glyphicon-trash"></span></a>
+<a class="close pull-left" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+</div>
+<div class="panel-body">
+<div class="tab-content">
+<div class="tab-pane fade" id="panel-style">
+<p class="small">Font Decoration</p>
+<div class="clearfix editor">
+<div class="editor-control font-control bold">B</div>
+<div class="editor-control font-control italic">i</div>
+<div class="editor-control font-control underline">U</div>
+<div class="editor-control link">URL</div>
+<div class="editor-control unlink">URL</div>
+<div class="editor-control color-red"></div>
+<div class="editor-control color-black"></div>
+<div class="editor-control color-grey"></div>
+</div>
+<p class="text-right">
+<a class="save-opts" href="#">Simpan <span class="glyphicon glyphicon-ok"></span></a>
+</p>
+</div>
+<div class="tab-pane fade in active" id="panel-font">
+<p class="small">Pilih style font</p>
+<p class="small">h2</p>
+<p class="h2">LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT.</p>
+<hr>
+<p class="small">h3</p>
+<p class="h3">LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT.</p>
+<p class="text-right">
+<a class="save-opts" href="#">Simpan <span class="glyphicon glyphicon-ok"></span></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-line tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Line
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-icon tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Icon
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-list tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+List
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-button tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Button
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-tabs tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Tabs
+</div>
+</div>
+<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-accordion tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+Accordion
+</div>
+</div>
+</div>
+</div>
+<!-- #menu-builder-editor -->
+
+<div class="tab-pane fade" id="menu-builder-layout">
+<div class="clearfix">
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid1 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+1/1
+</div>
+<div class="menu-builder-content">
+<div class="builder-columns">
+<div class="builder-column-title">1/1</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid2 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+1/2
+</div>
+<div class="menu-builder-content clearfix">
+<div class="col-md-6 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/2</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-6 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/2</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid3 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+1/3
+</div>
+<div class="menu-builder-content clearfix">
+<div class="col-md-4 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/3</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-4 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/3</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-4 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/3</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid4 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+2/3
+</div>
+<div class="menu-builder-content clearfix">
+<div class="col-md-8 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">2/3</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-4 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/3</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid5 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+1/4
+</div>
+<div class="menu-builder-content clearfix">
+<div class="col-md-3 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-3 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-3 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-3 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid6 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<i></i>
+3/4
+</div>
+<div class="menu-builder-content clearfix">
+<div class="col-md-9 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">3/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+<div class="col-md-3 builder-columns-grid">
+<div class="builder-columns">
+<div class="builder-column-title">1/4</div>
+<div class="builder-column-body"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- #menu-builder-layout -->
+</div>
+
+</div>
 </li>
 <li>
 <a href="#"><span class="glyphicon glyphicon-wrench main-nav"></span></a>
