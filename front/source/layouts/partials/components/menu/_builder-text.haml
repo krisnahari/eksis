@@ -1,0 +1,41 @@
+.menu-builder-title.menu-builder-text.tooltips{"data-toggle" => "tooltip", :title => "Upload image to share image"}
+  %i
+  Text Area
+.menu-builder-content
+  .panel.panel-default
+    .panel-heading.clearfix
+      .pull-left
+        %ul.nav.nav-tabs.nav-pills.panel-tabs{role: "tablist"}
+          %li
+            %a{"data-toggle" => "tab", href: "#panel-style", role: "tab"} style
+          %li.active
+            %a{"data-toggle" => "tab", href: "#panel-font", role: "tab"} font
+        \
+      .pull-right.panel-icon
+        %a.remove.pull-left{:href => "#"} <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        %a.remove.pull-left{:href => "#"} <span class="glyphicon glyphicon-trash"></span>
+        %a.close.pull-left{:href => "#"} <span class="glyphicon glyphicon-remove"></span>
+    .panel-body
+      .tab-content
+        .tab-pane.fade#panel-style
+          %p.small Font Decoration
+          .clearfix.editor
+            .editor-control.font-control.bold B
+            .editor-control.font-control.italic i
+            .editor-control.font-control.underline U
+            .editor-control.link URL
+            .editor-control.unlink URL
+            .editor-control.color-red
+            .editor-control.color-black
+            .editor-control.color-grey
+          %p.text-right
+            %a.save-opts{:href => "#"} Simpan <span class="glyphicon glyphicon-ok"></span>
+        .tab-pane.fade.in.active#panel-font
+          %p.small Pilih style font
+          %p.small h2
+          %p.h2 LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT.
+          %hr/
+          %p.small h3
+          %p.h3 LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT.
+          %p.text-right
+            %a.save-opts{:href => "#"} Simpan <span class="glyphicon glyphicon-ok"></span>

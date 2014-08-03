@@ -1,0 +1,279 @@
+/* ===================================================================
+  GENERAL STYLES
+=================================================================== */
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: sans-serif;
+}
+
+
+/* ===================================================================
+  TOOLBAR SECTION
+=================================================================== */
+.toolbar-section {
+  background: #eee;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+.logo {
+  float: left;
+  margin-top: 15px;
+}
+
+/* Toolbar Items
+------------------------------------------------------------------- */
+.toolbar-items {
+  float: right;
+  list-style: none;
+  margin: 30px 0 0;
+}
+.toolbar-items .item:first-child {
+  margin-left: 0;
+}
+.toolbar-items .item {
+  float: left;
+  margin-left: 30px;
+}
+.toolbar-items .item > a {
+  color: #ccc;
+  font-size: 28px;
+  text-decoration: none;
+}
+.toolbar-items .item > a:hover {
+  color: #aaa
+}
+
+.toolbar-items .item {
+  position: relative;
+}
+.toolbar-items .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  width: 440px;
+  left: 50%;
+  margin-left: -220px;
+  margin-top: 10px;
+}
+.toolbar-items .open .dropdown-menu {
+  display: block;
+}
+.toolbar-items .dropdown-menu:before,
+.toolbar-items .dropdown-menu:after {
+  content: '';
+  border-width: 8px 6px;
+  border-style: solid;
+  top: -15px;
+  left: 50%;
+  margin-left: -12px;
+  position: absolute;
+}
+.toolbar-items .dropdown-menu:before {
+  z-index: 10;
+  border-color: transparent transparent #fff transparent;
+}
+.toolbar-items .dropdown-menu:after {
+  margin-top: -1px;
+  border-color: transparent transparent #c6c6c6 transparent;  
+}
+
+
+/* ===================================================================
+  MODULE: TABS
+=================================================================== */
+.tab-module {
+  background: #fff;
+  border: 1px solid #c6c6c6
+}
+
+/* Tab Navigation
+------------------------------------------------------------------- */
+.tab-module .tab-nav:after,
+.tab-module .tab-nav:before {
+  content: '';
+  display: table;
+}
+.tab-module .tab-nav:after {
+  clear: both;
+}
+.tab-module .tab-nav {
+  zoom: 1;
+  list-style: none;
+  margin: 0 0 0 -1px;
+  border-bottom: 1px solid #c6c6c6;
+}
+.tab-module .tab-nav li {
+  float: left;
+  margin-bottom: -1px;
+}
+.tab-module .tab-nav a {
+  color: #ccc;
+  display: block;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.tab-module .tab-nav .active a,
+.tab-module .tab-nav a:hover {
+  color: #f00
+}
+.tab-module .tab-nav .active a {
+  border-right-color: #c6c6c6;
+  border-left-color: #c6c6c6;
+  border-bottom-color: #fff;
+}
+
+/* Tab Panel
+------------------------------------------------------------------- */
+.tab-panel {
+  padding: 10px;
+}
+
+
+/* Tab Content Addition
+------------------------------------------------------------------- */
+.tab-content-addition li {
+  width: 33.3%;
+}
+
+.content-addition i {
+  display: block;
+  font-size: 16px;
+}
+.content-addition a {
+  text-align: center;
+  font-size: 10px;
+  color: #a5a5a5;
+  display: block;
+  float: left;
+  padding: 12px;
+  text-decoration: none;
+}
+.content-addition a:hover {
+  color: #666;
+}
+
+
+
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    visibility: visible;
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9
+}
+
+.tooltip.top {
+    padding: 5px 0;
+    margin-top: -3px
+}
+
+.tooltip.right {
+    padding: 0 5px;
+    margin-left: 3px
+}
+
+.tooltip.bottom {
+    padding: 5px 0;
+    margin-top: 3px
+}
+
+.tooltip.left {
+    padding: 0 5px;
+    margin-left: -3px
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 4px
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid
+}
+
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.top-left .tooltip-arrow {
+    bottom: 0;
+    left: 5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.top-right .tooltip-arrow {
+    right: 5px;
+    bottom: 0;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.right .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000
+}
+
+.tooltip.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+.tooltip.bottom-left .tooltip-arrow {
+    top: 0;
+    left: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
+
+.tooltip.bottom-right .tooltip-arrow {
+    top: 0;
+    right: 5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000
+}
