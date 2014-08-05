@@ -162,6 +162,22 @@
       $('#editor-builder .builder-column-body').sortable({
         connectWith: '.builder-column-body'
       });
+
+      var root = {
+        'root': build_json('#editor-builder')
+      };
+      var json = JSON.stringify(root);
+
+      // ini potongan buat nge-save ke-server, didisable supaya ga error
+      // jd utk saat ini output di console aja
+      console.log(json);
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/profile_settings",
+      //   dataType: "json",
+      //   contentType: "application/json",
+      //   data: json
+      // });
     }
   });
 
@@ -171,3 +187,37 @@
   });
 
 }(window.jQuery));
+
+build_json = function(root) {
+  var arr;
+  arr = [];
+  $(root).children('.element').each(function() {
+    var elem;
+    elem = {
+      type: $(this).data('type')
+    };
+    $.extend(true, elem, parse_options(this));
+    return arr.push(elem);
+  });
+  return arr;
+};
+
+parse_options = function(elem) {
+  var contents, options, type;
+  type = $(elem).data('type');
+  options = {};
+  switch (type) {
+    case "Layout 1/1":
+    case "Layout 1/2":
+    case "Layout 1/3":
+    case "Layout 1/4":
+    case "Layout 2/3":
+    case "Layout 3/4":
+      contents = [];
+      $(elem).find('> .menu-builder-content > .builder-columns-grid > .builder-columns > .content').each(function() {
+        return contents.push(build_json($(this)));
+      });
+      options.content = Array.prototype.concat.apply([], contents);
+  }
+  return options;
+};
