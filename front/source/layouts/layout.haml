@@ -51,7 +51,10 @@
   %body{ :class => "#{data.page.body_class}" }
 
     / header navigation
-    = partial "layouts/partials/components/header"
+    - if data.page.logged == 0
+      = partial "layouts/partials/components/header_idx_visitor"
+    - else
+      = partial "layouts/partials/components/header"
 
     = yield
 

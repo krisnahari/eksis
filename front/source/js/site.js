@@ -134,9 +134,11 @@
 
   });
 
+
+
   $('#builder-dropdown .dropdown-menu').on('click', '.nav-tabs a', function(){
     $(this).closest('.dropdown').addClass('dontClose');
-  })
+  });
 
   $('#builder-dropdown').on('hide.bs.dropdown', function(e) {
     if ( $(this).hasClass('dontClose') ){
@@ -151,7 +153,7 @@
     connectWith: '.builder-column-body',
     placeholder: 'builder-placeholder',
     sort: function() {
-      $( this ).find('.placeholder').remove()
+      $( this ).find('.placeholder').remove();
     }
   });
 

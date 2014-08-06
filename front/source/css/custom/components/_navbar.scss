@@ -34,3 +34,9 @@
     @extend .hide;
   }
 }
+
+.index-visitor {
+  .navbar-default {
+    background-color: transparent;
+  }
+}
