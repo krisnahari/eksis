@@ -1,13 +1,25 @@
-.navbar.navbar-default.navbar-fixed-top{ :role => "navigation" }
+.navbar.navbar-default{ :role => "navigation" }
   .container
     .navbar-header
       %a.navbar-brand{ :href => "#" }
         %span.logo-trans
-          %img{ :src => "images/logo-transparent.png", :alt => "Eksis" }/
+          %img{ :src => "images/logo-tagline-transparent.png", :alt => "Eksis" }/
         %span.logo-text
           Eksis
     .navbar-visitor
       %ul.nav.navbar-nav.pull-right
-        %li.active
-          %a{ :href => "#" } <span class="glyphicon glyphicon-home main-nav"></span>
+        %li
+          %a.btn-login-hp{ :href => "#" } Login
+          #form-login-hp.form-login-hp
+            %h5.heading-form-login-hp Masukkan email dan passwordmu
+            %form{ :role => "form" }
+              .form-group.input-email-hp
+                %label{ :for => "inputEmailHp" } Email address
+                %input#inputEmailHp.form-control{ :type => "email", :placeholder => "Enter email" }
+              .form-group.input-pass-hp
+                %label{ :for => "inputPassHp" } Password
+                %input#inputPassHp.form-control{ :type => "password", :placeholder => "Password" }
+              %button#form-login-hp-submit.btn.btn-default{ :type => "submit" } Login
+              %a.forgot-login Lupa login kamu
+          /.form-login-hp
     /.navbar-visitor

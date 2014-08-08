@@ -11,7 +11,7 @@
 }
 
 .teaser-text {
-  @extend .col-sm-6;
+  @extend .col-md-6;
 }
 
 .teaser-text-light {
@@ -24,6 +24,12 @@
 
 .img-teaser-feature {
   margin: $ggw *2 0;
+
+  img {
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
 }
 
 .btn-idx {

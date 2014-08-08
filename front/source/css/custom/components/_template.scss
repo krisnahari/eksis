@@ -12,6 +12,10 @@ body{
   .intro-header-content {
     padding: $ggw *4 0;
 
+    @media (max-width: $screen-xs-max) {
+      padding-top: $ggw *6 !important;
+    }
+
     .intro-header-text {
       @extend .col-md-8;
       @extend .col-md-push-2;

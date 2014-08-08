@@ -18,6 +18,7 @@
   }
 }
 
+
 .navbar-default {
   border-color: transparent;
 }
@@ -25,6 +26,16 @@
 .index {
   .navbar {
     margin-bottom: 0;
+  }
+}
+
+.index-visitor {
+  .navbar {
+    margin-bottom: -120px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-bottom: -70px;
+    }
   }
 }
 
@@ -38,5 +49,56 @@
 .index-visitor {
   .navbar-default {
     background-color: transparent;
+  }
+}
+
+.btn-login-hp {
+  @extend .btn;
+  @extend .btn-lg;
+  color: white !important;
+  background-color: #f7221c;
+  border-color: #d8160f;
+
+  margin: $ggw *0.5 0 0;
+}
+
+.navbar-visitor {
+  @media (max-width: $screen-xs-max) {
+    position: absolute;
+    top: 0;
+    right: $ggw;
+  }
+
+  li.form-login-active {
+    .form-login-hp {
+      display: block;
+    }
+  }
+}
+
+.form-login-hp {
+  background-color: $gray-lighter;
+  padding: $ggw;
+  position: absolute;
+  right: 0;
+  width: 300px;
+  display: none;
+
+  .heading-form-login-hp {
+    margin-top: 0;
+  }
+
+  .input-email-hp {
+    margin-bottom: $ggw *0.25;
+  }
+
+  label {
+    @extend .hide;
+  }
+
+  .forgot-login {
+    @extend .small;
+    @extend .pull-right;
+    padding: $ggw *0.5 0;
   }
 }
