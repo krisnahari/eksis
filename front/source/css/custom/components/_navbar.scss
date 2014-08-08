@@ -29,7 +29,8 @@
   }
 }
 
-.index-visitor {
+.index-visitor,
+.showcase {
   .navbar {
     margin-bottom: -120px;
 
@@ -46,7 +47,8 @@
   }
 }
 
-.index-visitor {
+.index-visitor,
+.showcase {
   .navbar-default {
     background-color: transparent;
   }
@@ -54,7 +56,6 @@
 
 .btn-login-hp {
   @extend .btn;
-  @extend .btn-lg;
   color: white !important;
   background-color: #f7221c;
   border-color: #d8160f;

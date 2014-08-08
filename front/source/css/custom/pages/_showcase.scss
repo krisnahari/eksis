@@ -1,0 +1,16 @@
+.showcase {}
+
+.showcase-wrapper {
+  @extend .row;
+}
+
+.each-showcase {
+  @extend .col-sm-4;
+  @extend .col-xs-6;
+}
+
+.sc-img-wrapper {
+  img {
+    width: 100%;
+  }
+}
