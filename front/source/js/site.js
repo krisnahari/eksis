@@ -2,6 +2,80 @@
 // get all plugins required for document, done!
 
 
+
+
+(function($) {
+  $.fn.scrollhide = function(options) {
+
+    // Establish our default settings for threshold and class name
+    var settings = $.extend({
+        t : 50, // threshold before reach end of document
+        c : "invisible", // default class into element when triggered
+        v : "visible", // default class when visible
+        ob : "on-bottom", // default class when scrolled on bottom of page
+        om : "on-middle", // default class when scrolled on middle of page
+        ot : "on-top" // default class when scrolled on top of page
+    }, options);
+
+    return this.each( function() {
+
+      var  q = 0,
+           w = $(window),
+           d = $(document),
+           e = $(this), // targeting element
+           g = e.height(), // calculating height of element
+           s = settings; // initial for settings above
+
+      function r() { e.removeClass(s.c).addClass(s.v); }
+      function a() { e.addClass(s.c).removeClass(s.v); }
+
+      function aot() { e.addClass(s.ot); }
+      function aob() { e.addClass(s.ob); }
+      function aom() { e.addClass(s.om); }
+      function rot() { e.removeClass(s.ot); }
+      function rob() { e.removeClass(s.ob); }
+      function rom() { e.removeClass(s.om); }
+
+
+      w.on({
+        scroll: function () {
+          d.next().outerHeight();
+
+          var y = d.height(),
+              l = w.height(),
+              b = w.scrollTop();
+
+          if (b < g) {
+            r();
+            aot();
+            rom();
+          } else if (b + l >= y - s.t) {
+            r();
+            aob();
+            rom();
+          } else if (b > q) {
+            a();
+            aom();
+            rot();
+            rob();
+          } else {
+            r();
+            rob();
+            aom();
+          }
+
+          q = b;
+        }
+      });
+
+    });
+
+  };
+
+}(jQuery)); // end of this plugin
+
+
+
 // write down your code below this line
 // ++++++++++++++++++++++++++++++++++++++++++
 
@@ -134,9 +208,19 @@
 
   });
 
+
+  $(document).on('click', '.btn-login-hp', function(e){
+    $(this).parent().toggleClass("form-login-active");
+    e.preventDefault();
+  });
+
+
+  // $(".navbar").scrollhide(); // triggerring function for site navigation above
+
+
   $('#builder-dropdown .dropdown-menu').on('click', '.nav-tabs a', function(){
     $(this).closest('.dropdown').addClass('dontClose');
-  })
+  });
 
   $('#builder-dropdown').on('hide.bs.dropdown', function(e) {
     if ( $(this).hasClass('dontClose') ){
@@ -151,7 +235,7 @@
     connectWith: '.builder-column-body',
     placeholder: 'builder-placeholder',
     sort: function() {
-      $( this ).find('.placeholder').remove()
+      $( this ).find('.placeholder').remove();
     }
   });
 
@@ -160,13 +244,18 @@
     connectToSortable: '#editor-builder',
     stop: function() {
       $('#editor-builder .builder-column-body').sortable({
-        connectWith: '.builder-column-body'
+        connectWith: '.builder-column-body',
       });
 
       var root = {
         'root': build_json('#editor-builder')
       };
       var json = JSON.stringify(root);
+
+      // save to cookie for loading purpose
+      $.cookie('ctzeksis', json);
+      // read cookie value
+      // console.log($.cookie('ctzeksis'));
 
       // ini potongan buat nge-save ke-server, didisable supaya ga error
       // jd utk saat ini output di console aja
@@ -183,7 +272,46 @@
 
   $('.menu-builder-element').draggable({
     helper: 'clone',
-    connectToSortable: '#editor-builder .builder-column-body'
+    connectToSortable: '#editor-builder .builder-column-body',
+    stop: function() {
+      $('#editor-builder .builder-column-body').sortable({
+        connectWith: '.builder-column-body',
+      });
+
+      var root = {
+        'root': build_json('#editor-builder')
+      };
+      var json = JSON.stringify(root);
+
+      // save to cookie for loading purpose
+      $.cookie('ctzeksis', json);
+      // read cookie value
+      // console.log($.cookie('ctzeksis'));
+
+      console.log(json);
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/profile_settings",
+      //   dataType: "json",
+      //   contentType: "application/json",
+      //   data: json
+      // });
+    }
+  });
+
+
+  // get cookie value
+  $(document).on('click', '#getcookie', function() {
+    console.log($.cookie('ctzeksis'));
+  });
+
+
+  // load cookie value
+  $(document).on('click', '#loadcookie', function() {
+    var obj = $.cookie('ctzeksis');
+    var jsn = $.parseJSON(obj);
+
+    // do
   });
 
 }(window.jQuery));
@@ -202,6 +330,7 @@ build_json = function(root) {
   return arr;
 };
 
+
 parse_options = function(elem) {
   var contents, options, type;
   type = $(elem).data('type');
@@ -213,8 +342,23 @@ parse_options = function(elem) {
     case "Layout 1/4":
     case "Layout 2/3":
     case "Layout 3/4":
+    case "Image":
+    case "Video":
+    case "Masonry":
+    case "Youtube":
+    case "Soundcloud":
+    case "Audio":
+    case "Text":
+    case "Line":
+    case "Icon":
+    case "List":
+    case "Button":
+    case "Tabs":
+    case "Accordion":
       contents = [];
-      $(elem).find('> .menu-builder-content > .builder-columns-grid > .builder-columns > .content').each(function() {
+      $(elem)
+        .find('> .menu-builder-content > .builder-columns-grid > .builder-columns > .content')
+        .each(function() {
         return contents.push(build_json($(this)));
       });
       options.content = Array.prototype.concat.apply([], contents);

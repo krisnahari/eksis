@@ -10,24 +10,37 @@
 #menu-builder-content.tab-content
   .tab-pane.fade.in.active#menu-builder-media
     .clearfix
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-image')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-video')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-masonry')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-youtube')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-soundcloud')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-audio')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Image" }
+        = partial('layouts/partials/components/menu/builder-image')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Video" }
+        = partial('layouts/partials/components/menu/builder-video')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Masonry" }
+        = partial('layouts/partials/components/menu/builder-masonry')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Youtube" }
+        = partial('layouts/partials/components/menu/builder-youtube')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Soundcloud" }
+        = partial('layouts/partials/components/menu/builder-soundcloud')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Audio" }
+        = partial('layouts/partials/components/menu/builder-audio')
   / #menu-builder-media
   \
 
   .tab-pane.fade#menu-builder-editor
     .clearfix
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-text')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-line')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-icon')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-list')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-button')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-tabs')
-      .menu-builder-item.menu-builder-element= partial('layouts/partials/components/menu/builder-accordion')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Text" }
+        = partial('layouts/partials/components/menu/builder-text')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Line" }
+        = partial('layouts/partials/components/menu/builder-line')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Icon" }
+        = partial('layouts/partials/components/menu/builder-icon')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "List" }
+        = partial('layouts/partials/components/menu/builder-list')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Button" }
+        = partial('layouts/partials/components/menu/builder-button')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Tabs" }
+        = partial('layouts/partials/components/menu/builder-tabs')
+      .menu-builder-item.menu-builder-element.element{ "data-type" => "Accordion" }
+        = partial('layouts/partials/components/menu/builder-accordion')
   / #menu-builder-editor
   \
 
