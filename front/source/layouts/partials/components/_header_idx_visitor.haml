@@ -8,8 +8,10 @@
           Eksis
     .navbar-visitor
       %ul.nav.navbar-nav.pull-right
+        / ini nanti di switch ketika udah login/belum login
+        / ilangin salah satu list itemnya.
         %li
-          %a.btn-login-hp{ :href => "#" } Login
+          %a.btn-login-hp.hide{ :href => "#" } Login
           #form-login-hp.form-login-hp
             %h5.heading-form-login-hp Masukkan email dan passwordmu
             %form{ :role => "form" }
@@ -22,4 +24,13 @@
               %button#form-login-hp-submit.btn.btn-default{ :type => "submit" } Login
               %a.forgot-login Lupa login kamu
           /.form-login-hp
+
+        %li
+          %a.btn-menu-profile{ :href => "#" } fgaeg <span class="glyphicon glyphicon-chevron-down"></span>
+          %ul.list-menu-profile
+            %li
+              %a{:href => "#"} Profilku
+            %li
+              %a{:href => "#"} Logout
+          /.list-menu-profile
     /.navbar-visitor
