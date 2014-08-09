@@ -74,11 +74,12 @@ Eksis
 <div class="tab-content" id="menu-builder-content">
 <div class="tab-pane fade in active" id="menu-builder-media">
 <div class="clearfix">
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-image tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Image">
+<div class="menu-builder-title menu-builder-image tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Image
 </div>
-<div class="menu-builder-content">
+<div class="menu-builder-content content">
 <div class="form-group">
 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
 <div class="form-control" data-trigger="fileinput">
@@ -94,8 +95,10 @@ Image
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-video tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Video">
+<div class="menu-builder-title menu-builder-video tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Video
 </div>
@@ -128,23 +131,31 @@ Setting Embed
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-gallery tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Masonry">
+<div class="menu-builder-title menu-builder-gallery tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Masonry Gallery
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-youtube tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Youtube">
+<div class="menu-builder-title menu-builder-youtube tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Youtube
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-soundcloud tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Soundcloud">
+<div class="menu-builder-title menu-builder-soundcloud tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 SoundCloud
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-audio tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Audio">
+<div class="menu-builder-title menu-builder-audio tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Audio
 </div>
@@ -176,6 +187,7 @@ Upload File Audio
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </div>
@@ -183,7 +195,8 @@ Upload File Audio
 
 <div class="tab-pane fade" id="menu-builder-editor">
 <div class="clearfix">
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-text tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Text">
+<div class="menu-builder-title menu-builder-text tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Text Area
 </div>
@@ -240,36 +253,49 @@ Text Area
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-line tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Line">
+<div class="menu-builder-title menu-builder-line tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Line
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-icon tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Icon">
+<div class="menu-builder-title menu-builder-icon tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Icon
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-list tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="List">
+<div class="menu-builder-title menu-builder-list tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 List
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-button tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Button">
+<div class="menu-builder-title menu-builder-button tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Button
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-tabs tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Tabs">
+<div class="menu-builder-title menu-builder-tabs tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Tabs
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-element"><div class="menu-builder-title menu-builder-accordion tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-element element" data-type="Accordion">
+<div class="menu-builder-title menu-builder-accordion tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 Accordion
 </div>
+
 </div>
 </div>
 </div>
@@ -277,18 +303,23 @@ Accordion
 
 <div class="tab-pane fade" id="menu-builder-layout">
 <div class="clearfix">
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid1 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 1/1">
+<div class="menu-builder-title menu-builder-grid1 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 1/1
 </div>
-<div class="menu-builder-content">
+<div class="menu-builder-content clearfix">
+<div class="col-md-12 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/1</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid2 tooltips" data-toggle="tooltip" title="Upload image to share image">
+
+</div>
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 1/2">
+<div class="menu-builder-title menu-builder-grid2 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 1/2
 </div>
@@ -296,18 +327,20 @@ Accordion
 <div class="col-md-6 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/2</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-6 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/2</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid3 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 1/3">
+<div class="menu-builder-title menu-builder-grid3 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 1/3
 </div>
@@ -315,24 +348,26 @@ Accordion
 <div class="col-md-4 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/3</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-4 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/3</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-4 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/3</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid4 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 2/3">
+<div class="menu-builder-title menu-builder-grid4 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 2/3
 </div>
@@ -340,18 +375,20 @@ Accordion
 <div class="col-md-8 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">2/3</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-4 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/3</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid5 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 1/4">
+<div class="menu-builder-title menu-builder-grid5 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 1/4
 </div>
@@ -359,30 +396,32 @@ Accordion
 <div class="col-md-3 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-3 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-3 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-3 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
+
 </div>
-<div class="menu-builder-item menu-builder-grid"><div class="menu-builder-title menu-builder-grid6 tooltips" data-toggle="tooltip" title="Upload image to share image">
+<div class="menu-builder-item menu-builder-grid element" data-type="Layout 3/4">
+<div class="menu-builder-title menu-builder-grid6 tooltips" data-toggle="tooltip" title="Upload image to share image">
 <i></i>
 3/4
 </div>
@@ -390,16 +429,17 @@ Accordion
 <div class="col-md-9 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">3/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 <div class="col-md-3 builder-columns-grid">
 <div class="builder-columns">
 <div class="builder-column-title">1/4</div>
-<div class="builder-column-body"></div>
+<div class="builder-column-body content"></div>
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </div>

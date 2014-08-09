@@ -1,0 +1,70 @@
+---
+// title: Welcome to Middleman
+body_class: "showcase"
+logged: 0
+---
+
+.intro-header
+
+  .intro-header-content
+    .container
+      .intro-header-text
+        %h1 Indonesia, tampilkan dirimu dengan lantang
+        %a.btn.btn-danger.btn-lg daftar sekarang
+        %p.alt-link-register Pencari bakat? <a href="#"><strong>Daftar di sini</strong></a>.
+
+      .intro-name-profile{ :style => "display: block; clear: both;" }
+        %span.title Featuring
+        %span.name Masgum - Gitaris
+
+.container.ctn-eksis
+
+  .showcase-wrapper
+
+    .each-showcase-wrapper
+      .each-showcase
+        .sc-img-wrapper
+          %a{:href => "#"}
+            %img{:src => "images/img-sample.jpg", :alt => "desk photography"}/
+        .sc-uname
+          %a{:href => "#"} Krisna Hari
+        .sc-category
+          %span.cat-label Kategori
+          %a.cat-link{:href => "#"} modelling
+          %span.cat-separator,
+          %a.cat-link{:href => "#"} photography
+        .sc-viewed-stat
+          %span.glyphicon.glyphicon-eye-open
+          %span.viewed-count 1,281
+
+    .each-showcase-wrapper
+      .each-showcase
+        .sc-img-wrapper
+          %a{:href => "#"}
+        .sc-uname
+          %a{:href => "#"} Sutanto Kurniawan
+        .sc-category
+          %span.cat-label Kategori
+          %a.cat-link{:href => "#"} Modelling
+          %span.cat-separator,
+          %a.cat-link{:href => "#"} photography
+        .sc-viewed-stat
+          %span.glyphicon.glyphicon-eye-open
+          %span.viewed-count 1,105
+
+    .each-showcase-wrapper
+      .each-showcase
+        .sc-img-wrapper
+          %a{:href => "#"}
+        .sc-uname
+          %a{:href => "#"} Bima Arafah
+        .sc-category
+          %span.cat-label Kategori
+          %a.cat-link{:href => "#"} photography
+        .sc-viewed-stat
+          %span.glyphicon.glyphicon-eye-open
+          %span.viewed-count 1,187
+
+    %a.btn-loadmore.showcase-loadmore Load more
+
+/.container

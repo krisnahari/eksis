@@ -29,7 +29,8 @@
   }
 }
 
-.index-visitor {
+.index-visitor,
+.showcase {
   .navbar {
     margin-bottom: -120px;
 
@@ -46,7 +47,8 @@
   }
 }
 
-.index-visitor {
+.index-visitor,
+.showcase {
   .navbar-default {
     background-color: transparent;
   }
@@ -54,7 +56,6 @@
 
 .btn-login-hp {
   @extend .btn;
-  @extend .btn-lg;
   color: white !important;
   background-color: #f7221c;
   border-color: #d8160f;
@@ -76,6 +77,14 @@
   }
 }
 
+.navbar-nav {
+  li.menu-profile-active {
+    .list-menu-profile {
+      display: block;
+    }
+  }
+}
+
 .form-login-hp {
   background-color: $gray-lighter;
   padding: $ggw;
@@ -83,6 +92,7 @@
   right: 0;
   width: 300px;
   display: none;
+  z-index: 999;
 
   .heading-form-login-hp {
     margin-top: 0;
@@ -100,5 +110,44 @@
     @extend .small;
     @extend .pull-right;
     padding: $ggw *0.5 0;
+  }
+}
+
+
+.btn-menu-profile {
+  @extend .btn-login-hp;
+
+  .glyphicon {
+    top: 2px;
+  }
+}
+
+.list-menu-profile {
+  display: none;
+  background-color: $gray-lighter;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  list-style: none;
+  padding: 0;
+  z-index: 999;
+
+  li {
+    border-bottom: 1px solid lighten($gray-light, 15%);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      display: block;
+      padding: $ggw *0.5;
+      color: red;
+
+      &:hover {
+        background-color: darken($gray-lighter, 5%);
+        text-decoration: none;
+      }
+    }
   }
 }

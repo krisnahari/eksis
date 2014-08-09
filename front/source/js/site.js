@@ -209,8 +209,24 @@
   });
 
 
-  $(document).on('click', '.btn-login-hp', function(e){
-    $(this).parent().toggleClass("form-login-active");
+  // $(document).on('click', '.btn-login-hp', function(e){
+  //   $(this).parent().toggleClass("form-login-active");
+  //   e.preventDefault();
+  // });
+
+
+  // $(document).on('click', '.btn-menu-profile', function(e){
+  //   $(this).parent().toggleClass('menu-profile-active');
+  //   e.preventDefault();
+  // });
+
+  $(document).on('click', '.btn-menu-profile, .btn-login-hp', function(e){
+    if($(this).hasClass('btn-menu-profile')) {
+      $(this).parent().toggleClass('menu-profile-active');
+    } else if ($(this).hasClass('btn-login-hp')) {
+      $(this).parent().toggleClass("form-login-active");
+    }
+
     e.preventDefault();
   });
 
