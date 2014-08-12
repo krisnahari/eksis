@@ -10,6 +10,21 @@ body_class: "talent_dashboard customize"
     #editor-builder
       .menu-builder-single.placeholder
         %h3.text-center Drag item here
-    %button#getcookie.btn.btn-lg.btn-default Get cookie
-    %button#loadcookie.btn.btn-lg.btn-primary Load layout
 /.container
+
+/ Modal
+#cstModal.modal.fade{ "tabindex" => "-1", "role" => "dialog", "aria-labelledby" => "cstModalLabel", "aria-hidden" => "true" }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{ :type => "button", :class => "close", "data-dismiss" => "modal" }
+          %span{ "aria-hidden" => "true" } &times;
+          %span.sr-only Close
+        %h4#cstModalLabel.modal-title Hello visitor
+      .modal-body
+        %p Hai saya di sini membantu kamu membuat portfolio kamu.
+        %p Pertama klik <strong>tab layout</strong> pada menu <span class="glyphicon glyphicon-th-list main-nav"></span> diatas kemudian drag kolom yang kamu inginkan.
+        %img{:src => "images/col-layout.png", :alt => "layout column"}/
+        %p Kedua, setelah itu kamu bisa masukkan elemen media dan content sesuka kamu dan juga kamu bisa menambahkan banyak layout.
+      .modal-footer
+        %button.btn.btn-default{ :type => "button", "data-dismiss" => "modal" } Close

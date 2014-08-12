@@ -166,6 +166,19 @@
     $window
       .load(function(){
         $(this).trigger('site:onload');
+
+        // show modal for customize eksis
+        // if ($.cookie('_cst_eksis_modal') == null) {
+        //   $.cookie('_cst_eksis_modal', 'yes', { expires: 7, path: '/' });
+        //   if($('body').hasClass("customize")) {
+        //     $('#cstModal').modal('show');
+        //   }
+        // }
+
+        if($('body').hasClass("customize")) {
+          $('#cstModal').modal('show');
+        }
+
       })
       .resize(function(){
         var $this = $(this);
