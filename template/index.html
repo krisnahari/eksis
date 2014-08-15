@@ -555,8 +555,8 @@ Love share source code to engage people in  development.<br />
     }
   }
 
-  $("#form_img_1").change(function(){
-      readURL(this);
+  $(document).on('change', '[id^="form_img_"]', function(){
+    readURL(this);
   });
 
   $('img.input_controls').each(function(x) {
