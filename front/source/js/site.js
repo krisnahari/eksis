@@ -260,6 +260,11 @@
 
   $('.tooltips').tooltip({placement: 'bottom'});
 
+  // init for like item's tooltip
+  // $('body').tooltip({
+  //   selector: "[data-toggle=tooltip]"
+  // });
+
   $('#editor-builder, #editor-builder .builder-column-body').sortable({
     connectWith: '.builder-column-body',
     placeholder: 'builder-placeholder',
