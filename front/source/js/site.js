@@ -244,6 +244,15 @@
   });
 
 
+  $(document).on('click', '.modal-feedback-db', function(e){
+    $('#welcomeModal').modal('hide');
+    $('#welcomeModal').on('hidden.bs.modal', function (e) {
+      $('#feedbackModal').modal('show');
+    });
+    e.preventDefault();
+  });
+
+
   // $(".navbar").scrollhide(); // triggerring function for site navigation above
 
 

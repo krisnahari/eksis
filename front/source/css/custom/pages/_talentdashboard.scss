@@ -79,3 +79,17 @@
     }
   }
 }
+
+.modal {
+  .eksis-mail {
+    a {
+      font-family: "open_sansbold", sans-serif !important;
+    }
+
+    &:before {
+      @extend .glyphicon;
+      @extend .glyphicon-envelope;
+      margin-right: 5px;
+    }
+  }
+}
