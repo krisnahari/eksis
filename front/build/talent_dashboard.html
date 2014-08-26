@@ -50,6 +50,9 @@ Eksis
 </div>
 <div class="collapse navbar-collapse">
 <ul class="nav navbar-nav pull-right">
+<li>
+<a data-target="#welcomeModal" data-toggle="modal" href="#"><span class="glyphicon glyphicon-question-sign main-nav"></span></a>
+</li>
 <li class="active">
 <a href="#"><span class="glyphicon glyphicon-home main-nav"></span></a>
 </li>
@@ -558,6 +561,94 @@ Accordion
 </div>
 </div>
 <!-- .container -->
+<!-- Welcome modal -->
+<div aria-hidden="true" aria-labelledby="welcomeModalLabel" class="modal fade" id="welcomeModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+<h4 class="modal-title" id="welcomeModalLabel">Hai, username</h4>
+</div>
+<div class="modal-body">
+<p>Selamat datang di eksis - <span class="eksis-mail"><a class="modal-feedback-db" href="#" data-referral="modalFeedback">pre-beta edition</a></span>.</p>
+<p>Disini tempatnya kamu untuk mengekspresikan diri melalui portfolio yang unik. Kamu tidak perlu gelar sarjana informatika atau ahli roket untuk bisa menggunakan tools eksis.</p>
+<h4>Ayo, rancang sendiri layoutnya.</h4>
+<p>Dengan sistem drag-n-drop, kamu bisa membuat kombinasi layout sesuka hati.</p>
+<img alt="layout column" src="images/img-popup-1.jpg" style="width: 270px;">
+<img alt="layout column" src="images/img-popup-2.jpg" style="height: 175px;">
+<h4>Ayo, berkolaborasi</h4>
+<p>Jalin hubungan dengan orang-orang tepat yang mampu membawa bakat dan karir kamu ke tingkat yang lebih tinggi lagi. Jadi, pastikan portfoliomu terlihat profesional dan jangan lupa untuk melengkapi data profilemu.</p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-idx btn-danger" data-dismiss="modal" type="button">Mulai</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback form modal -->
+<div aria-hidden="true" aria-labelledby="feedbackModalLabel" class="modal fade" id="feedbackModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+<h4 class="modal-title" id="feedbackModalLabel">Form masukan</h4>
+</div>
+<div class="modal-body">
+<p>Tim developer kamu sedang bekerja secepatnya untuk bisa menghadirkan eksis full version.</p>
+<p>Kami mohon maaf apabila saat ini masih terdapat fitur yang belum dapat digunakan atau bila kamu menemukan sesuatu yang berjalan tidak seperti yang kamu harapkan.</p>
+<p>Silahkan gunakan form berikut ini untuk melaporkannya.</p>
+<form class="feedback-form-modal form-horizontal" id="feedbackFormModal" role="form">
+<div class="form-group">
+<label class="col-sm-2 control-label" for="inputSelectFeedback">Subjek</label>
+<div class="col-sm-10">
+<select class="form-control" id="inputSelectFeedback">
+<option>Pilih subjek</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-sm-2 control-label" for="inputMessageFeedback">Pesan</label>
+<div class="col-sm-10">
+<textarea class="form-control" id="inputMessageFeedback" placeholder="Tulis pesan kamu"></textarea>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+<button class="btn btn-idx btn-danger pull-right" id="btnFeedbackModal" type="submit">Kirim</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback form modal -->
+<div aria-hidden="true" aria-labelledby="welcomeModalLabel" class="modal fade" id="feedbackTYModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+<h4 class="modal-title" id="feedbackModalTYLabel">Terima Kasih</h4>
+</div>
+<div class="modal-body" style="text-align: center;">
+<span class="glyphicon glyphicon-ok" style="font-size: 48px; color: green;"></span>
+<h5 style="text-align: center; line-height: 1.5;">Masukan anda sangat berarti bagi tim eksis untuk tetap menghadirkan layanan yang memudahkan dan berkualitas.</h5>
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
 
 <!-- header navigation -->
 <footer class="ft-eksis" id="footer">

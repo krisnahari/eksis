@@ -168,16 +168,24 @@
         $(this).trigger('site:onload');
 
         // show modal for customize eksis
-        // if ($.cookie('_cst_eksis_modal') == null) {
-        //   $.cookie('_cst_eksis_modal', 'yes', { expires: 7, path: '/' });
-        //   if($('body').hasClass("customize")) {
-        //     $('#cstModal').modal('show');
-        //   }
-        // }
-
-        if($('body').hasClass("customize")) {
-          $('#cstModal').modal('show');
+        if ($.cookie('_cst_eksis_modal') == null) {
+          $.cookie('_cst_eksis_modal', 'yes', { expires: 7, path: '/' });
+          if($('body').hasClass("customize")) {
+            $('#cstModal').modal('show');
+          }
         }
+
+        // show modal for feedback prebeta eksis
+        if ($.cookie('_feedback_eksis_modal') == null) {
+          $.cookie('_feedback_eksis_modal_feedback', 'yes', { expires: 7, path: '/' });
+          if($('body').hasClass("talent_dashboard")) {
+            $('#welcomeModal').modal('show');
+          }
+        }
+
+        // if($('body').hasClass("customize")) {
+        //   $('#cstModal').modal('show');
+        // }
 
       })
       .resize(function(){
@@ -242,6 +250,58 @@
 
     e.preventDefault();
   });
+
+  // modal customize
+  $(document).on('click', '.trigger-popup', function(e){
+    $('#cstModal').modal('show');
+    e.preventDefault();
+  });
+
+
+  // modal feedback
+  // nampilin modal prebeta dan feedback form
+  $(document).on('click', '.modal-feedback-db', function(e){
+    $('#welcomeModal').modal('hide');
+    $('#welcomeModal').on('hidden.bs.modal', function (e) {
+      $('#feedbackModal').modal('show');
+    });
+    e.preventDefault();
+  });
+
+  // lanjutan untuk nampilin modal thank you setelah feedback form
+  // modal feedback thankyou
+  // $(document).on('click', '#btnFeedbackModal', function(e){
+  //   var t = $(this);
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "/profile_settings",
+  //     dataType: "json",
+  //     contentType: "application/json",
+  //     data: json,
+  //     beforeSend: function() {
+  //       t.button('loading').addClass('btn-loading');
+  //     },
+  //     complete: function() {
+  //       t.button('reset').removeClass('btn-loading');
+  //     },
+  //     success: function (data) {
+  //         $('#feedbackModal').modal('hide');
+  //         $('#feedbackModal').on('hidden.bs.modal', function (e) {
+  //           $('#feedbackTYModal').modal('show');
+  //         });
+
+  //         // GA event tracking
+             // klo mau isi event tracking via GA
+  //         ga('send', 'event', 'section', 'feedback', 'Thank you!', {
+  //           'page': url.pathname
+  //         });
+  //     },
+  //     error: function (data) {}
+  //   });
+
+  //   e.preventDefault();
+  // });
 
 
   // $(".navbar").scrollhide(); // triggerring function for site navigation above
