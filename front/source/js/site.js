@@ -244,6 +244,8 @@
   });
 
 
+  // modal feedback
+  // nampilin modal prebeta dan feedback form
   $(document).on('click', '.modal-feedback-db', function(e){
     $('#welcomeModal').modal('hide');
     $('#welcomeModal').on('hidden.bs.modal', function (e) {
@@ -251,6 +253,41 @@
     });
     e.preventDefault();
   });
+
+  // lanjutan untuk nampilin modal thank you setelah feedback form
+  // modal feedback thankyou
+  // $(document).on('click', '#btnFeedbackModal', function(e){
+  //   var t = $(this);
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "/profile_settings",
+  //     dataType: "json",
+  //     contentType: "application/json",
+  //     data: json,
+  //     beforeSend: function() {
+  //       t.button('loading').addClass('btn-loading');
+  //     },
+  //     complete: function() {
+  //       t.button('reset').removeClass('btn-loading');
+  //     },
+  //     success: function (data) {
+  //         $('#feedbackModal').modal('hide');
+  //         $('#feedbackModal').on('hidden.bs.modal', function (e) {
+  //           $('#feedbackTYModal').modal('show');
+  //         });
+
+  //         // GA event tracking
+             // klo mau isi event tracking via GA
+  //         ga('send', 'event', 'section', 'feedback', 'Thank you!', {
+  //           'page': url.pathname
+  //         });
+  //     },
+  //     error: function (data) {}
+  //   });
+
+  //   e.preventDefault();
+  // });
 
 
   // $(".navbar").scrollhide(); // triggerring function for site navigation above
