@@ -168,16 +168,24 @@
         $(this).trigger('site:onload');
 
         // show modal for customize eksis
-        // if ($.cookie('_cst_eksis_modal') == null) {
-        //   $.cookie('_cst_eksis_modal', 'yes', { expires: 7, path: '/' });
-        //   if($('body').hasClass("customize")) {
-        //     $('#cstModal').modal('show');
-        //   }
-        // }
-
-        if($('body').hasClass("customize")) {
-          $('#cstModal').modal('show');
+        if ($.cookie('_cst_eksis_modal') == null) {
+          $.cookie('_cst_eksis_modal', 'yes', { expires: 7, path: '/' });
+          if($('body').hasClass("customize")) {
+            $('#cstModal').modal('show');
+          }
         }
+
+        // show modal for feedback prebeta eksis
+        if ($.cookie('_feedback_eksis_modal') == null) {
+          $.cookie('_feedback_eksis_modal_feedback', 'yes', { expires: 7, path: '/' });
+          if($('body').hasClass("talent_dashboard")) {
+            $('#welcomeModal').modal('show');
+          }
+        }
+
+        // if($('body').hasClass("customize")) {
+        //   $('#cstModal').modal('show');
+        // }
 
       })
       .resize(function(){
@@ -240,6 +248,12 @@
       $(this).parent().toggleClass("form-login-active");
     }
 
+    e.preventDefault();
+  });
+
+  // modal customize
+  $(document).on('click', '.trigger-popup', function(e){
+    $('#cstModal').modal('show');
     e.preventDefault();
   });
 
