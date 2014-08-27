@@ -260,6 +260,18 @@
 
   // modal feedback
   // nampilin modal prebeta dan feedback form
+  $(document).on('click', '#btnModalNextCst', function(e){
+    $('#cstModal').modal('hide');
+    $('#cstModal').on('hidden.bs.modal', function (e) {
+      $('#cstModal2').modal('show');
+    });
+    e.preventDefault();
+  });
+
+
+
+  // modal feedback
+  // nampilin modal prebeta dan feedback form
   $(document).on('click', '.modal-feedback-db', function(e){
     $('#welcomeModal').modal('hide');
     $('#welcomeModal').on('hidden.bs.modal', function (e) {
