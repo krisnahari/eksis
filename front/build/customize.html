@@ -468,6 +468,9 @@ Accordion
 
 <div class="select_theme">
 <div class="container">
+<a class="trigger-popup" href="#">
+<img alt="popup help" src="images/icon-lampu.png">
+</a>
 <ul class="list_theme">
 <li>
 <a class="tooltips" data-placement="bottom" data-toggle="tooltip" href="#" title="Template name to choose">
@@ -480,7 +483,7 @@ Accordion
 </div>
 <div class="container ctn-eksis">
 <div class="ctn-customize">
-<h2 class="text-center">Built your page <a class="trigger-popup" href="#"><span class="glyphicon glyphicon-info-sign"></span></a></h2>
+<h2 class="text-center">Built your page</h2>
 <div id="editor-builder">
 <div class="menu-builder-single placeholder">
 <h3 class="text-center">Drag item here</h3>
@@ -493,21 +496,37 @@ Accordion
 <div aria-hidden="true" aria-labelledby="cstModalLabel" class="modal fade" id="cstModal" role="dialog" tabindex="-1">
 <div class="modal-dialog">
 <div class="modal-content">
-<div class="modal-header">
+<div class="modal-body">
 <button class="close" data-dismiss="modal" type="button">
 <span aria-hidden="true">&times;</span>
 <span class="sr-only">Close</span>
 </button>
-<h4 class="modal-title" id="cstModalLabel">Hello visitor</h4>
-</div>
-<div class="modal-body">
-<p>Hai saya di sini membantu kamu membuat portfolio kamu.</p>
-<p>Pertama klik <strong>tab layout</strong> pada menu <span class="glyphicon glyphicon-th-list main-nav"></span> diatas kemudian drag kolom yang kamu inginkan.</p>
-<img alt="layout column" src="images/col-layout.png">
-<p>Kedua, setelah itu kamu bisa masukkan elemen media dan content sesuka kamu dan juga kamu bisa menambahkan banyak layout.</p>
+<p>Hai, saya disini membantu kamu membuat portfolio kamu. Ikuti petunjuk singkat ini untuk segera memulai.</p>
+<p><span class="num">1</span> Pertama, klik <strong>tab layout</strong> <span class="glyphicon glyphicon-th-list main-nav"></span> dan drag kolom yang kamu inginkan.</p>
+<img alt="layout column" src="images/modal-img-cst.png">
 </div>
 <div class="modal-footer">
-<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+<button class="btn btn-danger btn-idx" id="btnModalNextCst" type="button">Berikut</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="cstModal2Label" class="modal fade" id="cstModal2" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+<p>Hai, saya disini membantu kamu membuat portfolio kamu. Ikuti petunjuk singkat ini untuk segera memulai.</p>
+<p><span class="num">2</span> Setelah memilih layout, sekarang kamu bisa memasukkan elemen seperti media atau konten ke dalam layout yang telah kamu pilih.</p>
+<img alt="layout column" src="images/modal-img-cst-2.png">
+<p><span class="num">3</span> Langkah berikutnya adalah mengisi data elemen media atau konten yang telah kamu masukkan.</p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-danger btn-idx" data-dismiss="modal" type="button">Close</button>
 </div>
 </div>
 </div>

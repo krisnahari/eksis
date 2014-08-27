@@ -5,6 +5,8 @@ body_class: "talent_dashboard customize"
 
 .select_theme
   .container
+    %a.trigger-popup{ :href => "#" }
+      %img{:src => "images/icon-lampu.png", :alt => "popup help"}/
     %ul.list_theme
       %li
         %a.tooltips{ :href => "#", "data-toggle" => "tooltip", "data-placement" => "bottom", "title" => "Template name to choose" }
@@ -14,7 +16,7 @@ body_class: "talent_dashboard customize"
 .container.ctn-eksis
 
   .ctn-customize
-    %h2.text-center Built your page <a class="trigger-popup" href="#"><span class="glyphicon glyphicon-info-sign"></span></a>
+    %h2.text-center Built your page
     #editor-builder
       .menu-builder-single.placeholder
         %h3.text-center Drag item here
@@ -25,15 +27,27 @@ body_class: "talent_dashboard customize"
 #cstModal.modal.fade{ "tabindex" => "-1", "role" => "dialog", "aria-labelledby" => "cstModalLabel", "aria-hidden" => "true" }
   .modal-dialog
     .modal-content
-      .modal-header
+      .modal-body
         %button{ :type => "button", :class => "close", "data-dismiss" => "modal" }
           %span{ "aria-hidden" => "true" } &times;
           %span.sr-only Close
-        %h4#cstModalLabel.modal-title Hello visitor
-      .modal-body
-        %p Hai saya di sini membantu kamu membuat portfolio kamu.
-        %p Pertama klik <strong>tab layout</strong> pada menu <span class="glyphicon glyphicon-th-list main-nav"></span> diatas kemudian drag kolom yang kamu inginkan.
-        %img{:src => "images/col-layout.png", :alt => "layout column"}/
-        %p Kedua, setelah itu kamu bisa masukkan elemen media dan content sesuka kamu dan juga kamu bisa menambahkan banyak layout.
+        %p Hai, saya disini membantu kamu membuat portfolio kamu. Ikuti petunjuk singkat ini untuk segera memulai.
+        %p <span class="num">1</span> Pertama, klik <strong>tab layout</strong> <span class="glyphicon glyphicon-th-list main-nav"></span> dan drag kolom yang kamu inginkan.
+        %img{:src => "images/modal-img-cst.png", :alt => "layout column"}/
       .modal-footer
-        %button.btn.btn-default{ :type => "button", "data-dismiss" => "modal" } Close
+        %button#btnModalNextCst.btn.btn-danger.btn-idx{ :type => "button" } Berikut
+
+/ Modal
+#cstModal2.modal.fade{ "tabindex" => "-1", "role" => "dialog", "aria-labelledby" => "cstModal2Label", "aria-hidden" => "true" }
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %button{ :type => "button", :class => "close", "data-dismiss" => "modal" }
+          %span{ "aria-hidden" => "true" } &times;
+          %span.sr-only Close
+        %p Hai, saya disini membantu kamu membuat portfolio kamu. Ikuti petunjuk singkat ini untuk segera memulai.
+        %p <span class="num">2</span> Setelah memilih layout, sekarang kamu bisa memasukkan elemen seperti media atau konten ke dalam layout yang telah kamu pilih.
+        %img{:src => "images/modal-img-cst-2.png", :alt => "layout column"}/
+        %p <span class="num">3</span> Langkah berikutnya adalah mengisi data elemen media atau konten yang telah kamu masukkan.
+      .modal-footer
+        %button.btn.btn-danger.btn-idx{ :type => "button", "data-dismiss" => "modal" } Close
