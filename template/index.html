@@ -346,11 +346,15 @@ padding-top:0px;
     *zoom: 1;
 }
 
-form {
+form[id^="form_img_"] {
   margin: 0;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+form button {
+  cursor: pointer;
 }
 
 .fileinput-button {
@@ -377,6 +381,116 @@ form {
 
 .btn-img-upl:hover {
   opacity: 0.85;
+}
+
+.loading-ajax {
+  position: fixed;
+  font-family: sans-serif;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -17px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  display: none;
+}
+
+#modal-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #000;
+  opacity: .8;
+  filter: alpha(opacity=80);
+}
+
+#modal-body {
+  top: 30px;
+  left: 50%;
+  width: 455;
+  height: auto;
+  min-height: 200;
+  z-index: 1043;
+  position: fixed;
+  background: #ddd;
+  margin-left: -228px;
+  font-family: sans-serif;
+  border-radius: 5px;
+}
+
+#modal-body .modal-form {
+  display: block;
+  clear: both;
+}
+
+#modal-body form {
+  margin: 0;
+  padding: 0;
+}
+
+#modal-body form input {
+  display: block;
+  clear: both;
+  width: 100%;
+  padding: 5px 7px;
+  margin-bottom: 10px;
+}
+
+#modal-body form input[type="text"],
+#modal-body form input[type="url"] {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+#modal-body form button[type="submit"] {
+  float: right;
+  display: inline-block;
+  background: none;
+  font-weight: bold;
+  border: none;
+  font-size: 14px;
+}
+
+.modal-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+}
+
+.modal-header h4 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.modal-close {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 </style>
@@ -435,7 +549,7 @@ form {
 <p class="testo input_controls">Simple, Customizable and  Beautiful    Html One Page Free Template.</p>
 
 <div class="download_area">
-<p class="download_bt" align="center"><a href="#"><span class="input_controls">CALL TO ACTION</span></a></p>
+<p class="download_bt" align="center"><a href="#" class="input_controls" data-type="Button">CALL TO ACTION</a></p>
 <p ></p>
 <p ></p>
 </div>
@@ -523,7 +637,7 @@ Love share source code to engage people in  development.<br />
 
 
 <div  align="center">
-<p class="download_bt" align="center"><a href="#"><span class="input_controls">DOWNLOAD  (0.9 MB)</span></a></p>
+<p class="download_bt" align="center"><a href="#" class="input_controls" data-type="Button">DOWNLOAD  (0.9 MB)</a></p>
 </div>
 </div>
 
@@ -542,18 +656,67 @@ Love share source code to engage people in  development.<br />
   </p>
 </div>
 
+<div class="loading-ajax">Menyimpan data</div>
+
 <script type="text/javascript">
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $('#img_1').attr('src', e.target.result);
+        $('img[id^=' + btn_id + ']').attr('src', e.target.result);
+
+        var root = {
+          'root': [
+            {
+              "type": btn_id,
+              "content": [
+                {
+                  "type": "Image",
+                  "text": e.target.result
+                }
+              ]
+            }
+          ]
+        };
+
+        var json = JSON.stringify(root);
+        console.log(json);
+
+        // $.ajax({
+        //   type: "POST",
+        //   url: "/profile_settings",
+        //   dataType: "json",
+        //   contentType: "application/json",
+        //   data: json,
+        //   beforeSend: function() {
+        //     // add things while loading
+        //     $('.loading-ajax').show();
+        //   },
+        //   complete: function() {
+        //     // remove things when it's done
+        //     $('.loading-ajax').hide();
+        //   },
+        //   success: function (data) {
+        //     // do something when success
+        //   },
+        //   error: function (data) {
+        //       alert(data.responseJSON.error);
+        //   }
+        // });
       }
 
       reader.readAsDataURL(input.files[0]);
     }
   }
+
+  var btn_id;
+  $(document).on('click', '.btn-img-upl', function(e){
+    btn_id = $(this).attr('id');
+    btn_id = btn_id.replace('btn_', '');
+
+    return btn_id; // returning value to select image ID
+  });
 
   $(document).on('change', '[id^="form_img_"]', function(){
     readURL(this);
@@ -562,17 +725,101 @@ Love share source code to engage people in  development.<br />
   $('img.input_controls').each(function(x) {
     x = x+1;
 
-    $(this).attr('id', 'img_' + x).parent().css('position', 'relative').prepend('<form id="form_img_upload_' + x + '"><span class="button btn-img-upl fileinput-button" type="button"><span>Select files</span><input id="form_img_' + x + '" name="form_img_' + x + '" type="file"></span></form>');
+    $(this).attr('id', 'img_' + x).parent().css('position', 'relative').prepend('<form id="form_img_upload_' + x + '"><span class="button btn-img-upl fileinput-button" type="button" id="btn_img_' + x + '"><span>Select files</span><input id="form_img_' + x + '" name="form_img_' + x + '" type="file"></span></form>');
   });
 
   $('.input_controls').each(function(i) {
     i = i+1;
-    $(this).addClass('input_controls_' + i);
+    $(this)
+      .addClass('input_controls_' + i);
     $(this)
       .not("img")
+      .attr('id', 'input_controls_' + i)
+      .not('[data-type="Button"]')
       .attr("contenteditable", "true")
       .attr("data-value", $(this).html());
   });
+
+  var btn_type_id;
+  $('.input_controls[data-type="Button"]').on('click', function(e) {
+    var id = $(this).attr('id');
+    var href = $(this).attr('href');
+    var text = $(this).text();
+    var input = $(this).attr('data-type');
+
+    $(document.body).append('<div id="modal-bg"></div>');
+    $(document.body).append('<div id="modal-body"><div id="modal_' + id + '"><div class="modal-header"><h4>Tambah atau ubah link</h4><button class="modal-close">x</button></div><div class="modal-content"><div class="content-container"><p class="leading">Masukkan target atau url tujuan</p></div><div class="modal_form cf"><form id="modal_form_'+id+'" role="form" method="POST"><div class="modal_input_ctrls"><input type="url" name="modal_input_url" placeholder="http://" value="'+href+'"></div><div class="modal_input_ctrls"><input type="text" name="modal_input_text" placeholder="text" value="'+text+'"></div><div class="modal_input_ctrls"><input type="hidden" name="modal_type_input" value="'+input+'"><button type="submit" id="button_'+id+'">Simpan &#x2714;</button></div></form></div></div></div></div>');
+
+    btn_type_id = e.target.id;
+    // btn_type_id = $('form[id="modal_form_' + btn_type_id + '"]');
+    // btn_type_id = btn_type_id[0].id;
+
+    e.preventDefault();
+  });
+
+  $(document).on('click', '.modal-close', function(e){
+    closeModal();
+
+    e.preventDefault();
+  });
+
+  $(document).on('click', 'button[id^="button_"]', function(e){
+    var id_form = $(this).parent().parent().attr('id');
+    var id_type = id_form.replace('modal_form_', '');
+    var text = $('#'+id_form+' input[name="modal_input_text"]').val();
+    var url = $('#'+id_form+' input[name="modal_input_url"]').val();
+
+    $('.' + btn_type_id).text(text);
+    $('.' + btn_type_id).attr('href', url);
+
+    closeModal();
+
+    var root = {
+      'root': [
+        {
+          "type": id_type,
+          "content": [
+            {
+              "type": "Button",
+              "text": url
+            }
+          ]
+        }
+      ]
+    };
+
+    var json = JSON.stringify(root);
+    console.log(json);
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/profile_settings",
+    //   dataType: "json",
+    //   contentType: "application/json",
+    //   data: json,
+    //   beforeSend: function() {
+    //     // add things while loading
+    //     $('.loading-ajax').show();
+    //   },
+    //   complete: function() {
+    //     // remove things when it's done
+    //     $('.loading-ajax').hide();
+    //   },
+    //   success: function (data) {
+    //     // do something when success
+    //   },
+    //   error: function (data) {
+    //       alert(data.responseJSON.error);
+    //   }
+    // });
+
+    e.preventDefault();
+  });
+
+  function closeModal() {
+    $('#modal-bg').remove();
+    $('#modal-body').remove();
+  }
 
   document.addEventListener('keydown', function (event) {
     var esc = event.which == 27,
@@ -587,18 +834,52 @@ Love share source code to engage people in  development.<br />
         document.execCommand('undo');
         el.blur();
       } else if (nl) {
-        // save
-        data[el.getAttribute('data-value')] = el.innerHTML;
+        // save default vs current value
+        // data[el.getAttribute('data-value')] = el.innerHTML;
+
+        var root = {
+          'root': [
+            {
+              "type": el.getAttribute('id'),
+              "content": [
+                {
+                  "type": checkIsEditable(el),
+                  "text": el.innerHTML
+                }
+              ]
+            }
+          ]
+        };
+
+        var json = JSON.stringify(root);
+        console.log(json);
 
         // send ajax request to update the field
-        /*
-        $.ajax({
-          url: window.location.toString(),
-          data: data,
-          type: 'post'
-        });
-        */
-        log(JSON.stringify(data));
+        // $.ajax({
+        //   type: "POST",
+        //   url: "/profile_settings",
+        //   dataType: "json",
+        //   contentType: "application/json",
+        //   data: json,
+        //   beforeSend: function() {
+        //     // add things while loading
+        //     $('.loading-ajax').show();
+        //   },
+        //   complete: function() {
+        //     // remove things when it's done
+        //     $('.loading-ajax').hide();
+        //   },
+        //   success: function (data) {
+        //     // do something when success
+        //   },
+        //   error: function (data) {
+        //       alert(data.responseJSON.error);
+        //   }
+        // });
+
+
+        // default vs current value
+        // log(JSON.stringify(data));
 
         el.blur();
         event.preventDefault();
@@ -606,10 +887,31 @@ Love share source code to engage people in  development.<br />
     }
   }, true);
 
-  function log(s) {
-    document.getElementsByClassName('input_controls').innerHTML = s;
-    console.log(document.getElementsByClassName('input_controls').innerHTML);
+  // get default vs current value
+  // function log(s) {
+  //   document.getElementsByClassName('input_controls').innerHTML = s;
+  //   console.log(document.getElementsByClassName('input_controls').innerHTML);
+  // }
+
+  function checkIsEditable(elem){
+    var attr = elem.getAttribute('contenteditable');
+    // For some browsers, 'attr' is undefined;
+    // For others, 'attr' is false.  Check for both.
+    if (typeof attr !== typeof undefined && attr !== false) {
+      return attr = "Text";
+    } else {
+      if (elem.getAttribute('data-type')){
+        return elem.getAttribute('data-type');
+      }
+    }
   }
+
+  // loop each ID available inside document
+  // var inputs = document.getElementsByClassName('input_controls');
+  // for (var i = 0; i < inputs .length; i++) {
+  //   console.log(inputs[i].id);
+  // }
+
 </script>
 
 </body>
