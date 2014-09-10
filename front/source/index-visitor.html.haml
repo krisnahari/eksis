@@ -4,10 +4,45 @@ body_class: "index index-visitor"
 logged: 0
 ---
 
-.intro-header
+/ .intro-header
+
+/   .intro-header-content
+/     .container
+/       .intro-header-text
+/         %h1 Indonesia, tampilkan dirimu dengan lantang
+/         %a.btn.btn-danger.btn-lg daftar sekarang
+/         %p.alt-link-register Pencari bakat? <a href="#"><strong>Daftar di sini</strong></a>.
+
+/       .intro-name-profile{ :style => "display: block; clear: both;" }
+/         %span.title Featuring
+/         %span.name Masgum - Gitaris
+
+
+
+#carousel-header-generic.carousel.slide{ "data-ride" => "carousel", :style => "z-index: 0;" }
+  / Indicators
+  %ol.carousel-indicators
+    %li.active{ "data-target" => "#carousel-header-generic", "data-slide-to" => "0" }
+    %li{ "data-target" => "#carousel-header-generic", "data-slide-to" => "1" }
+    %li{ "data-target" => "#carousel-header-generic", "data-slide-to" => "2" }
+
+  / Wrapper for slides
+  .carousel-inner
+    .item.active
+      .carousel-img-wrapper{ :style => "background-image: url(images/gitar.jpg);" }
+      .carousel-caption
+        / test caption 1
+    .item
+      .carousel-img-wrapper{ :style => "background-image: url(https://d2ed0w4q03gsmw.cloudfront.net/0fdb3c9/images/home/backgrounds/tararh.jpg);" }
+      .carousel-caption
+        / test caption 2
+    .item
+      .carousel-img-wrapper{ :style => "background-image: url(https://d2ed0w4q03gsmw.cloudfront.net/0fdb3c9/images/home/backgrounds/timferriss.jpg);" }
+      .carousel-caption
+        / test caption 3
 
   .intro-header-content
-    .container
+    .container-fluid
       .intro-header-text
         %h1 Indonesia, tampilkan dirimu dengan lantang
         %a.btn.btn-danger.btn-lg daftar sekarang
@@ -16,6 +51,16 @@ logged: 0
       .intro-name-profile{ :style => "display: block; clear: both;" }
         %span.title Featuring
         %span.name Masgum - Gitaris
+
+  / Controls
+  %a.left.carousel-control{ :href => "#carousel-header-generic", :role => "button", "data-slide" => "prev" }
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control{ :href => "#carousel-header-generic", :role => "button", "data-slide" => "next" }
+    %span.glyphicon.glyphicon-chevron-right
+
+
+
+
 
 .container.ctn-eksis
 

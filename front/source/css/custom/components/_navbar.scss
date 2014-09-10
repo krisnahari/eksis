@@ -12,6 +12,7 @@
 
 .navbar {
   min-height: 65px;
+  z-index: 99;
 
   .main-nav {
     font-size: 32px;
@@ -148,6 +149,27 @@
         background-color: darken($gray-lighter, 5%);
         text-decoration: none;
       }
+    }
+  }
+}
+
+
+
+/* Quick fix logo for production */
+// ====================================
+#dashboard {
+  .navbar {
+    min-height: 75px;
+  }
+
+  .navbar-brand .logo-trans .logo {
+    margin-top: -10px;
+  }
+
+  .navbar-nav > li > a {
+    @media (min-width: 768px) {
+      padding-top: 18px;
+      padding-bottom: 18px;
     }
   }
 }
